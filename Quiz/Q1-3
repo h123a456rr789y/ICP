@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    while(1){
+        int n,x,n1,y=0,n2;
+        printf("Please input the number:");
+        scanf("%d",&n);
+        n1=n2=n;
+        if(n1<0){
+            printf("Over\n");
+            break;
+        }
+        int flag=1;
+        int flagmirror=0;
+        while(n!=0){
+            x=n%10;
+            y=10*y+x;
+            if(x!=8&&x!=0)
+                flag=0;
+            n/=10;
+        }
+       /* while(n2!=0){
+            x=n2%10;
+            y=10*y+x;
+            n2/=10;
+        }*/
+        if(y==n1)
+            flagmirror=1;
+        if(flag==1&&flagmirror==1)
+            printf("This is a Mirrored palindermic number\n");
+        else if (flagmirror==0)
+            printf("This is Not a Palinderomic number\n");
+        else
+            printf("This is a Plindromic number\n");
+    }
+    return 0;
+}
